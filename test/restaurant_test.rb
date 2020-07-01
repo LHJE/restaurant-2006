@@ -42,7 +42,7 @@ class RestaurantTest < Minitest::Test
   end
 
   def test_it_can_add_dishes
-    
+
     restaurant = Restaurant.new('16:00', 'Il Poggio')
 
     restaurant.add_dish('Burrata')
@@ -51,4 +51,15 @@ class RestaurantTest < Minitest::Test
 
     assert_equal ['Burrata', 'Pizzetta', 'Ravioli'], restaurant.dishes
   end
+
+  #Iteration 3 Tests:
+  def test_it_open_for_lunch
+
+    restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+    assert_lt 12, restaurant1.open_for_lunch(10)
+    assert_lt 12, restaurant2.open_for_lunch(16)  #I feel like I'm a little close with this one, but I wasted so much time at the top of the hour that I just don't have time to see what else I can do with this one.
+  end
+
 end

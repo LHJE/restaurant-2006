@@ -15,6 +15,8 @@ class Restaurant
     @dishes << dish  #this one we learned earlier today or yesterday (with Kat either way), and I'm glad to see the answers matched me!
   end
 
-
+  def open_for_lunch?
+    @opening_time.to_i <= 12
+  end
 
 end
